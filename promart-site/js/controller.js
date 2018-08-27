@@ -2,6 +2,44 @@ angular.module('page', []);
 angular.module('page')
 .controller('PageController', function ($scope, $http) {
 
+	$scope.industryTiles = [[{
+		'name': 'Building Products',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/1-building-products.jpg'
+	}, {
+		'name': 'Chemicals',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/2-chemicals-small.jpg'
+	}, {
+		'name': 'Mill Products',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/3-mill-products-small.jpg'
+	}], [{
+		'name': 'Mining',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/4-mining-small.jpg'
+	}, {
+		'name': 'Oil & Gas',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/5%20oil-and-gas.jpg'
+	}, {
+		'name': 'Utilities',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/6-utilities-small.jpg'
+	}], [{
+		'name': 'Aerospace & Defense',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/7-aerospace-and-defense.jpg'
+	}, {
+		'name': 'Automotive',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/8-automotive-small.jpg'
+	}, {
+		'name': 'High Tech',
+		'info': 'Industry Solutions',
+		'image': 'http://www.promart.io/img/industries/400x400/9-high-tech-small.jpg'
+	}]];
+
 	var api = '/services/v3/js/marketplace/api/apps.js';
 
 	function loadApps() {
