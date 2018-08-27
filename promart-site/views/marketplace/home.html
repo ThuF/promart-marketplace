@@ -4,21 +4,23 @@
 		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.featured">
 			<div>
 				<div class="card portfolio-box thumbnail">
-					<a href="#"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
+					<a href="#/apps/{{next.id}}"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
 					<div class="card-body">
-						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
+						<a href="#/apps/{{next.id}}"><h5 class="card-title">{{next.name}}</h5></a>
 					</div>
-					<div class="portfolio-box-caption">
-						<div class="portfolio-box-caption-content">
-							<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
-							<span>{{next.description}}</span>
+					<a href="#/apps/{{next.id}}">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
+								<span>{{next.description}}</span>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<a class="pull-right" href="#">View More</a>
+	<a class="pull-right" href="#/apps/featured/">View More</a>
 	<br>
 	<hr>
 	<h2>Recent Apps</h2>
@@ -26,28 +28,30 @@
 		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.recent">
 			<div>
 				<div class="card portfolio-box thumbnail">
-					<a href="#"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
+					<a href="#/apps/{{next.id}}"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
 					<div class="card-body">
-						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
+						<a href="#/apps/{{next.id}}"><h5 class="card-title">{{next.name}}</h5></a>
 					</div>
-					<div class="portfolio-box-caption">
-						<div class="portfolio-box-caption-content">
-							<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
-							<span>{{next.description}}</span>
+					<a href="#/apps/{{next.id}}">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
+								<span>{{next.description}}</span>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<a class="pull-right" href="#">View More</a>
+	<a class="pull-right" href="#/apps/recent/">View More</a>
 	<br>
 	<hr>
 	<h2>Industry Apps</h2>
 	<div class="row masonry-grid">
 		<div class="col-md-6 col-lg-4 masonry-column" ng-repeat="row in industryTiles">
 			<div ng-repeat="next in row">
-				<a class="portfolio-box thumbnail">
+				<a href="#/industries/{{next.id}}" class="portfolio-box thumbnail">
 					<img class="img-fluid" src="{{next.image}}" alt="">
 					<div class="portfolio-box-caption">
 						<div class="portfolio-box-caption-content">
@@ -59,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-	<a class="pull-right" href="#">View More</a>
+	<a class="pull-right" href="#/industries/">View More</a>
 	<br>
 	<hr>
 </div>

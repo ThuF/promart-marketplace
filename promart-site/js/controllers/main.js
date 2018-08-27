@@ -5,5 +5,24 @@ marketpace.config(function($routeProvider) {
 		.when('/', {
 			templateUrl : 'views/marketplace/home.html',
 			controller  : 'HomeController'
+		})
+		.when('/apps/featured/', {
+			templateUrl : 'views/marketplace/app.html',
+			controller  : 'FeaturedAppsController'
+		})
+		.when('/apps/recent/', {
+			templateUrl : 'views/marketplace/app.html',
+			controller  : 'RecentAppsController'
+		})
+		.when('/apps/:appId', {
+			templateUrl : 'views/marketplace/app.html',
+			controller  : 'AppController'
+		})
+		.when('/industries/:industryId', {
+			templateUrl : 'views/marketplace/industry.html',
+			controller  : 'IndustryController'
+		})
+		.otherwise({
+			redirectTo: '/'
 		});
 });
