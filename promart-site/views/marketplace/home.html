@@ -1,0 +1,65 @@
+<div class="container">
+	<h2>Featured Apps</h2>
+	<div class="row masonry-grid">
+		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.featured">
+			<div>
+				<div class="card portfolio-box thumbnail">
+					<a href="#"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
+					<div class="card-body">
+						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
+					</div>
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
+							<span>{{next.description}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="pull-right" href="#">View More</a>
+	<br>
+	<hr>
+	<h2>Recent Apps</h2>
+	<div class="row masonry-grid">
+		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.recent">
+			<div>
+				<div class="card portfolio-box thumbnail">
+					<a href="#"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
+					<div class="card-body">
+						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
+					</div>
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
+							<span>{{next.description}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="pull-right" href="#">View More</a>
+	<br>
+	<hr>
+	<h2>Industry Apps</h2>
+	<div class="row masonry-grid">
+		<div class="col-md-6 col-lg-4 masonry-column" ng-repeat="row in industryTiles">
+			<div ng-repeat="next in row">
+				<a class="portfolio-box thumbnail">
+					<img class="img-fluid" src="{{next.image}}" alt="">
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
+							<div class="project-category text-faded">{{next.name}}</div>
+							<div class="project-name">{{next.info}}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<a class="pull-right" href="#">View More</a>
+	<br>
+	<hr>
+</div>

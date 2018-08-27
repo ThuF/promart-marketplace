@@ -1,6 +1,5 @@
-angular.module('page', []);
-angular.module('page')
-.controller('PageController', function ($scope, $http) {
+angular.module('marketplace')
+.controller('HomeController', function ($scope, $http) {
 
 	$scope.industryTiles = [[{
 		'name': 'Building Products',

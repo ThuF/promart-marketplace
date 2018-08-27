@@ -1,4 +1,4 @@
-<html lang="en" ng-app="page"><head>
+<html lang="en" ng-app="marketplace"><head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/SoftwareApplication" style="" ng-controller="PageController">
+<body itemscope="" itemtype="http://schema.org/SoftwareApplication" style="">
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -112,75 +112,9 @@
     </div>
     <!-- /.intro-header -->
 
-	<div class="container">
-	<h2>Featured Apps</h2>
-	<div class="row masonry-grid">
-		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.featured">
-			<div>
-		  		<div class="card portfolio-box thumbnail">
-		  			<a href="#">
-						<img class="card-img-top" src="{{next.image}}" alt="Recent app image">
-					</a>
-					<div class="card-body">
-						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
-					</div>
-		  			<div class="portfolio-box-caption">
-		  				<div class="portfolio-box-caption-content">
-		  					<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
-		  					<span>{{next.description}}</span>
-		  				</div>
-		  			</div>
-		  		</div>
-		  	</div>
-		</div>
-	</div>
-	<a class="pull-right" href="#">View More</a>
-	<br>
-	<hr>
-	<h2>Recent Apps</h2>
-	<div class="row masonry-grid">
-		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.recent">
-			<div>
-		  		<div class="card portfolio-box thumbnail">
-		  			<a href="#">
-						<img class="card-img-top" src="{{next.image}}" alt="Recent app image">
-					</a>
-					<div class="card-body">
-						<a href="#"><h5 class="card-title">{{next.name}}</h5></a>
-					</div>
-		  			<div class="portfolio-box-caption">
-		  				<div class="portfolio-box-caption-content">
-		  					<h3 style="margin-top: -5em; background: grey; color: white;">{{next.name}}</h3>
-		  					<span>{{next.description}}</span>
-		  				</div>
-		  			</div>
-		  		</div>
-		  	</div>
-		</div>
-	</div>
-	<a class="pull-right" href="#">View More</a>
-	<br>
-	<hr>
-	<h2>Industry Apps</h2>
-  <div class="row masonry-grid">
-    <div class="col-md-6 col-lg-4 masonry-column" ng-repeat="row in industryTiles">
-	  	<div ng-repeat="next in row">
-	  		<a class="portfolio-box thumbnail">
-	  			<img class="img-fluid" src="{{next.image}}" alt="">
-	  			<div class="portfolio-box-caption">
-	  				<div class="portfolio-box-caption-content">
-	  					<div class="project-category text-faded">{{next.name}}</div>
-	  					<div class="project-name">{{next.info}}</div>
-	  				</div>
-	  			</div>
-	  		</a>
-	  	</div>
-    </div>
-  </div>
-  <a class="pull-right" href="#">View More</a>
-  <br>
-  <hr>
-</div>
+		<!-- Angular View -->
+		<div ng-view></div>
+
         <footer>
             <div class="container">
                 <div class="row">
@@ -242,11 +176,10 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	    <script type="text/javascript" src="/services/v3/web/resources/angular/1.4.7/angular.min.js"></script>
+	    <script type="text/javascript" src="/services/v3/web/resources/angular/1.4.7/angular-route.min.js"></script>
 	    <script type="text/javascript" src="/services/v3/web/resources/angular/1.4.7/angular-resource.min.js"></script>
-	    <script type="text/javascript" src="js/controller.js"></script>
 
-
-    
-
+	    <script type="text/javascript" src="js/controllers/main.js"></script>
+	    <script type="text/javascript" src="js/controllers/marketplace/home.js"></script>
 
 </body></html>
