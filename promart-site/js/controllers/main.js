@@ -7,11 +7,11 @@ marketpace.config(function($routeProvider) {
 			controller  : 'HomeController'
 		})
 		.when('/apps/featured/', {
-			templateUrl : 'views/marketplace/app.html',
+			templateUrl : 'views/marketplace/apps.html',
 			controller  : 'FeaturedAppsController'
 		})
 		.when('/apps/recent/', {
-			templateUrl : 'views/marketplace/app.html',
+			templateUrl : 'views/marketplace/apps.html',
 			controller  : 'RecentAppsController'
 		})
 		.when('/apps/:appId', {

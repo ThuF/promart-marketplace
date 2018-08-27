@@ -1,0 +1,65 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div>
+				<h5>Industries</h5>
+				<ul>
+					<li>Automotive</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link" id="home-tab" data-toggle="tab" href="#/apps/" role="tab" aria-controls="home" aria-selected="true">All</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link show active" id="profile-tab" data-toggle="tab" href="#/apps/featured/" role="tab" aria-controls="profile" aria-selected="false">Featured</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#/apps/recent/" role="tab" aria-controls="contact" aria-selected="false">Recent</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade">
+						.Profile...
+					</div>
+					<div class="tab-pane show active">
+						<br>
+						<div ng-repeat="next in applications.featured">
+							<div class="row">
+								<div class="col-md-2">
+									<img style="max-width: 100%" src="{{next.image}}" alt="App Logo">
+								</div>
+								<div class="col-md-7">
+									<h5>{{next.name}}</h5>
+									<span>{{next.description}}</span>
+									<br>
+									<br>
+									<div class="text-center">
+										<span class="text-center"><i><b>$490</b> | by Company Name |</i></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<br>
+									<button class="btn btn-primary">Open</button>
+									<br>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div class="tab-pane fade">
+						.Contact...
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
