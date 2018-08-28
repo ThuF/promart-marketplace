@@ -1,7 +1,7 @@
 <div class="container">
 	<h2>Featured Apps</h2>
 	<div class="row masonry-grid">
-		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.featured">
+		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in featuredApps">
 			<div>
 				<div class="card portfolio-box thumbnail">
 					<a href="#/apps/{{next.id}}"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>
@@ -25,7 +25,7 @@
 	<hr>
 	<h2>Recent Apps</h2>
 	<div class="row masonry-grid">
-		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in applications.recent">
+		<div class="col-md-4 col-lg-3 masonry-column" ng-repeat="next in recentApps">
 			<div>
 				<div class="card portfolio-box thumbnail">
 					<a href="#/apps/{{next.id}}"><img class="card-img-top" src="{{next.image}}" alt="Recent app image"></a>

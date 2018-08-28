@@ -1,14 +1,14 @@
 angular.module('marketplace')
-.controller('RecentAppsController', function ($scope, $http) {
+.controller('AllAppsController', function ($scope, $http) {
 
-	$scope.activeTab = 'recentApps';
+	$scope.activeTab = 'allApps';
 
 	var api = '/services/v3/js/marketplace/api/apps.js';
 
 	function loadApps() {
-		$http.get(api + '/recent')
+		$http.get(api)
 		.success(function(data) {
-			$scope.recentApps = data;
+			$scope.allApps = data;
 		});
 	}
 	loadApps();

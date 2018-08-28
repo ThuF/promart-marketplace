@@ -29,33 +29,15 @@
 				<h5>Top Paid</h5>
 				<hr>
 				<ol>
-					<a href="#">
-						<li>Asset Management<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>Loyalty Management<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>Financial Services<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>Expenses<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>HR Self-Service<span class="blockquote-footer">by Company Name</span></li>
+					<a href="#/apps/{{next.id}}" ng-repeat="next in topPaidApps">
+						<li>{{next.name}}<span class="blockquote-footer">by {{next.vendor}}</span></li>
 					</a>
 				</ol>
 				<h5>Top Free</h5>
 				<hr>
 				<ol>
-					<a href="#">
-						<li>Diving Shop<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>Car Service<span class="blockquote-footer">by Company Name</span></li>
-					</a>
-					<a href="#">
-						<li>House Guard<span class="blockquote-footer">by Company Name</span></li>
+					<a href="#/apps/{{next.id}}" ng-repeat="next in topFreeApps">
+						<li>{{next.name}}<span class="blockquote-footer">by {{next.vendor}}</span></li>
 					</a>
 				</ol>
 			</div>
@@ -64,33 +46,32 @@
 			<div>
 				<ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link" id="home-tab" data-toggle="tab" href="#/apps/" role="tab" aria-controls="home" aria-selected="true">All</a>
+						<a ng-class="activeTab === 'allApps' ? 'nav-link active' : 'nav-link'" id="home-tab" data-toggle="tab" href="#/apps/" role="tab" aria-controls="home" aria-selected="true">All</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link show active" id="profile-tab" data-toggle="tab" href="#/apps/featured/" role="tab" aria-controls="profile" aria-selected="false">Featured</a>
+						<a ng-class="activeTab === 'featuredApps' ? 'nav-link active' : 'nav-link'" id="profile-tab" data-toggle="tab" href="#/apps/featured/" role="tab" aria-controls="profile" aria-selected="false">Featured</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#/apps/recent/" role="tab" aria-controls="contact" aria-selected="false">Recent</a>
+						<a ng-class="activeTab === 'recentApps' ? 'nav-link active' : 'nav-link'" id="contact-tab" data-toggle="tab" href="#/apps/recent/" role="tab" aria-controls="contact" aria-selected="false">Recent</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="myTabContent">
-					<div class="tab-pane fade">
-						.Profile...
-					</div>
-					<div class="tab-pane show active">
+					<div ng-class="activeTab === 'allApps' ? 'tab-pane show active' : 'tab-pane fade'" >
 						<br>
-						<div ng-repeat="next in applications.featured">
+						<div ng-repeat="next in allApps">
 							<div class="row">
 								<div class="col-md-2">
-									<img style="max-width: 100%" src="{{next.image}}" alt="App Logo">
+									<a href="#/apps/{{next.id}}">
+										<img style="max-width: 100%" src="{{next.image}}" alt="App Logo">
+									</a>
 								</div>
 								<div class="col-md-7">
-									<h5>{{next.name}}</h5>
+									<a href="#/apps/{{next.id}}"><h5>{{next.name}}</h5></a>
 									<span>{{next.description}}</span>
 									<br>
 									<br>
 									<div class="text-center">
-										<span class="text-center"><i><b>$490</b> | by Company Name |</i></span>
+										<span class="text-center"><i><b>$490</b> | by {{next.vendor}} |</i></span>
 										<span class="fa fa-star checked"></span>
 										<span class="fa fa-star checked"></span>
 										<span class="fa fa-star checked"></span>
@@ -100,15 +81,76 @@
 								</div>
 								<div class="col-md-3">
 									<br>
-									<button class="btn btn-primary">Open</button>
+									<a href="#/apps/{{next.id}}" class="btn btn-primary">Open</a>
 									<br>
 								</div>
 							</div>
 							<hr>
 						</div>
 					</div>
-					<div class="tab-pane fade">
-						.Contact...
+					<div ng-class="activeTab === 'featuredApps' ? 'tab-pane show active' : 'tab-pane fade'" >
+						<br>
+						<div ng-repeat="next in featuredApps">
+							<div class="row">
+								<div class="col-md-2">
+									<a href="#/apps/{{next.id}}">
+										<img style="max-width: 100%" src="{{next.image}}" alt="App Logo">
+									</a>
+								</div>
+								<div class="col-md-7">
+									<a href="#/apps/{{next.id}}"><h5>{{next.name}}</h5></a>
+									<span>{{next.description}}</span>
+									<br>
+									<br>
+									<div class="text-center">
+										<span class="text-center"><i><b>$490</b> | by {{next.vendor}} |</i></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<br>
+									<a href="#/apps/{{next.id}}" class="btn btn-primary">Open</a>
+									<br>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+					<div ng-class="activeTab === 'recentApps' ? 'tab-pane show active' : 'tab-pane fade'" >
+						<br>
+						<div ng-repeat="next in recentApps">
+							<div class="row">
+								<div class="col-md-2">
+									<a href="#/apps/{{next.id}}">
+										<img style="max-width: 100%" src="{{next.image}}" alt="App Logo">
+									</a>
+								</div>
+								<div class="col-md-7">
+									<a href="#/apps/{{next.id}}"><h5>{{next.name}}</h5></a>
+									<span>{{next.description}}</span>
+									<br>
+									<br>
+									<div class="text-center">
+										<span class="text-center"><i><b>$490</b> | by {{next.vendor}} |</i></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<br>
+									<a href="#/apps/{{next.id}}" class="btn btn-primary">Open</a>
+									<br>
+								</div>
+							</div>
+							<hr>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -50,47 +50,19 @@ angular.module('marketplace')
 
 	var api = '/services/v3/js/marketplace/api/apps.js';
 
-	function loadApps() {
-		$http.get(api)
+	function loadFeaturedApps() {
+		$http.get(api + '/featured')
 		.success(function(data) {
-			$scope.applications = data;
+			$scope.featuredApps = data;
 		});
 	}
-	loadApps();
+	loadFeaturedApps();
 
-	$scope.openNewDialog = function() {
-		$scope.actionType = 'new';
-		$scope.entity = {};
-		toggleEntityModal();
-	};
-
-	$scope.openEditDialog = function(entity) {
-		$scope.actionType = 'update';
-		$scope.entity = entity;
-		toggleEntityModal();
-	};
-
-	$scope.openDeleteDialog = function(entity) {
-		$scope.actionType = 'delete';
-		$scope.entity = entity;
-		toggleEntityModal();
-	};
-
-	$scope.close = function() {
-		toggleEntityModal();
-	};
-
-	$scope.create = function() {
-		$http.post(api, JSON.stringify($scope.entity))
+	function loadRecentApps() {
+		$http.get(api + '/recent')
 		.success(function(data) {
-			toggleEntityModal();
-		}).error(function(data) {
-			alert(JSON.stringify(data));
+			$scope.recentApps = data;
 		});
-			
-	};
-
-	function toggleEntityModal() {
-		$('#entityModal').modal('toggle');
 	}
+	loadRecentApps();
 });
